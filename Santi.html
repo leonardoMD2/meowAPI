@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        fetch ('https://meowfacts.herokuapp.com/?lang=esp')
+            .then ((resultado) => resultado.json())
+            .then ((resultado) => convertidor(resultado))
+            .catch((error) => console.log(error))
+        function convertidor(res){
+            console.log(res)
+            const h1 = document.createElement('h1')
+            h1.innerHTML = res.data
+            h1.classList.add('frase')
+            document.body.appendChild(h1)
+        }
+    </script>
+</body>
+</html>
